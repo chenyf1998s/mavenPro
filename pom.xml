@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>org.example</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+<!--    聚合特性-->
+    <modules>
+        <module>maven-custom</module>
+        <module>maven-service</module>
+    </modules>
+
+
+<!--    继承特性-->
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId></groupId>-->
+<!--                <artifactId></artifactId>-->
+<!--                <version></version>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
+
+
+<!--    这是配置maven从远程仓库拉取构件(依赖以及插件之类的)-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id></id>-->
+<!--            <name></name>-->
+<!--            <url></url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id></id>-->
+<!--            <name></name>-->
+<!--            <url></url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+
+<!--    将构件部署到nexus里面的私库-->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>maven releases</name>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>maven snapshot</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+<!--    <build>-->
+<!--        <pluginManagement>-->
+<!--            <plugins>-->
+<!--                <plugin>-->
+<!--                </plugin>-->
+<!--            </plugins>-->
+<!--        </pluginManagement>-->
+<!--    </build>-->
+
+
+
+
+</project>
